@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración Manual de Husky para Node.js</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, p, ol, li {
+      color: #333;
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f4f4f4;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Configuración Manual de Husky para Node.js</h1>
+  
+  <p>Para configurar Husky manualmente en tu proyecto Node.js, sigue estos pasos:</p>
+  
+  <ol>
+    <li><strong>Instalar Husky:</strong> Ejecuta el siguiente comando en la terminal:</li>
+    <code>npm install husky --save-dev</code>
+
+    <li><strong>Habilitar los ganchos de Git:</strong> Ejecuta el siguiente comando para habilitar automáticamente los ganchos de Git después de la instalación:</li>
+    <code>npx husky install</code>
+
+    <li><strong>Configurar el script "prepare" en package.json:</strong> Edita tu archivo <code>package.json</code> para incluir el siguiente script:</li>
+    <pre><code>"scripts": {
+  "prepare": "husky install"
+}</code></pre>
+
+    <li><strong>Crear un gancho:</strong> Para agregar un comando a un gancho o crear uno nuevo, utiliza <strong>husky add <file> [cmd] </strong> asegúrate de ejecutar husky install antes antes</li>
+    <code>npx husky add .husky/pre-commit "npm test"</code>
+
+    <li><strong>Agregar el gancho a Git:</strong> Ejecuta el siguiente comando para agregar el nuevo gancho a Git:</li>
+    <code>git add .husky/pre-commit</code>
+
+    <li><strong>Intentar realizar un commit:</strong> Ejecuta el siguiente comando para realizar un commit y probar la configuración de Husky:</li>
+    <code>git commit -m "Keep calm and commit"</code>
+
+    <li> Las pruebas que realizamos fueron en un entorno local, para controlar el commit 
+
+    </li>
+    <p>Si el comando <code>npm test</code> falla, tu commit se abortará automáticamente.</p>
+  </ol>
+
+  <h2>Más Información</h2>
+  <p>Para obtener información más detallada sobre Husky y sus características, consulta la <a href="https://typicode.github.io/husky/getting-started.html">documentación oficial de Husky</a>.</p>
+
+</body>
+</html>
