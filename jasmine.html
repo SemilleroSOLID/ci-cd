@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración de Jasmine para Node.js</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, p, ol, li {
+      color: #333;
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f4f4f4;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Configuración de Jasmine para Node.js</h1>
+  
+  <p>Para comenzar a utilizar Jasmine en tu proyecto Node.js, sigue estos pasos básicos:</p>
+  
+  <ol>
+    <li><strong>Agregar Jasmine a tu proyecto:</strong> Ejecuta el siguiente comando en la terminal para instalar Jasmine como dependencia de desarrollo:</li>
+    <code>npm install --save-dev jasmine</code>
+
+    <li><strong>Inicializar Jasmine en tu proyecto:</strong> Utiliza el siguiente comando para crear la configuración inicial de Jasmine en tu proyecto:</li>
+    <code>npx jasmine init</code>
+
+    <li><strong>Crar la prueba:</strong> Una vez inicializado Jasmine, creará un directorio llamado "spec" en donde podemos
+        crear las pruebas que después ejecutaremos. El archivo debe llamarse de la siguiente forma:
+        </li>
+        <code>nombre_prueba.spec.js</code>
+
+    <li><strong>Configurar Jasmine como tu script de pruebas:</strong> Añade el siguiente script a tu archivo <code>package.json</code>:</li>
+    <pre><code>"scripts": {
+  "test": "jasmine"
+}</code></pre>
+
+    <li><strong>Ejecutar tus pruebas:</strong> Utiliza el siguiente comando para ejecutar tus pruebas Jasmine:</li>
+    <code>npm test</code>
+  </ol>
+
+  <h2>Crear la prueba</h2>
+  <p>La prueba se creara segun los criterios que se quieran validar.
+  </p>
+
+  <h2>Más Información</h2>
+  <p>Para obtener información más detallada sobre Jasmine y sus características, consulta la <a href="https://jasmine.github.io/pages/getting_started.html">documentación oficial de Jasmine</a>.</p>
+
+</body>
+</html>
