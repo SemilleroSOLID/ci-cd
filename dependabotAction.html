@@ -1,20 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuración de Dependabot</title>
+  <title>Configuración de Dependabot en tu Repositorio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1, p, ol, li {
+      color: #333;
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-top: 20px;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f4f4f4;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Configuración de Dependabot</h1>
+
+  <h1>Configuración de Dependabot en tu Repositorio</h1>
   
-  <p>Para mantener actualizadas las dependencias de este proyecto, hemos configurado Dependabot. A continuación, se detallan los pasos básicos para revisar y fusionar las actualizaciones:</p>
-  
+  <p>Para comenzar con las actualizaciones de Dependabot, necesitarás especificar qué ecosistemas de paquetes actualizar y dónde se encuentran los manifiestos de paquetes. Sigue estos pasos:</p>
+
+  <h2>Pasos para Configurar Dependabot:</h2>
+
   <ol>
-    <li>Revisa las solicitudes de extracción (pull requests) abiertas en la pestaña "Pull requests" de este repositorio.</li>
-    <li>Busca las solicitudes de extracción creadas por Dependabot.</li>
-    <li>Revisa los cambios propuestos por Dependabot y asegúrate de que no haya conflictos con el código existente.</li>
-    <li>Si todo parece correcto, puedes fusionar la solicitud de extracción para aplicar las actualizaciones de dependencias.</li>
+    <li><strong>Crear el archivo de configuración de Dependabot:</strong> En la raíz de tu repositorio, crea un archivo llamado <code>dependabot.yml</code></li>  
+
+    <li><strong>Modificar según tus necesidades:</strong> Ajusta la configuración según las necesidades de tu proyecto. Por ejemplo, puedes cambiar la frecuencia de las actualizaciones ajustando el valor de <code>interval</code>.</li>
+
+    <li><strong>Guardar el archivo:</strong> Después de realizar las modificaciones, guarda y commitea el archivo <code>dependabot.yml</code> en tu repositorio.</li>
   </ol>
+
+  <p>Con esta configuración, Dependabot realizará actualizaciones diarias para las dependencias de npm y las acciones de GitHub en tu repositorio.</p>
+
+  <p>Para obtener información más detallada sobre las opciones de configuración, consulta la <a href="https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates">documentación oficial de Dependabot</a>.</p>
+
+  <h2>Explicación del Archivo <code>dependabot.yml</code></h2>
+  <p>El archivo <code>dependabot.yml</code> contiene la configuración de Dependabot para gestionar las actualizaciones de dependencias en tu repositorio. Aquí está la explicación de cada parte:</p>
+
+  <p>Tambien puedes crear el archivo dependabot.yml desde <strong>Settings </strong> eliges la opcion <strong> Code security and analysis </strong> y buscas dependabot </p>
+
+  <p>para este ejemplo habilitamos <strong>Dependabot version updates </strong></p>
+
+  <pre>
+  <code>
+    # To get started with Dependabot version updates, you'll need to specify which
+    # package ecosystems to update and where the package manifests are located.
+    # Please see the documentation for all configuration options:
+    # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+  </code>
+  </pre>
+  <strong>Comentario de Inicio: </strong>
+  <p>Este comentario proporciona información inicial sobre cómo comenzar con las actualizaciones de Dependabot. Destaca que necesitas especificar los ecosistemas de paquetes que deseas actualizar y dónde se encuentran los manifiestos de paquetes en tu repositorio. También incluye un enlace a la documentación oficial de GitHub, donde puedes encontrar todas las opciones de configuración disponibles.</p>
+
+
+  <pre>
+  <code>
+    version: 2
+    updates:
+      # Mantener las dependencias para npm
+      - package-ecosystem: "npm"
+        directory: "/"
+        schedule:
+          interval: "daily"
+
+      # Mantener las dependencias para GitHub Actions
+      - package-ecosystem: "github-actions"
+        # Workflow files stored in the default location of `.github/workflows`.
+        directory: "/"
+        schedule:
+          interval: "daily"
+  </code>
+</pre>
+
+<strong>Bloque de Configuración de Dependabot: </strong> version: 2: Indica que estás utilizando la versión 2 de la configuración de Dependabot. La versión 2 es la versión más reciente y proporciona más funcionalidades que la versión anterior.</p>
+<strong>updates:</strong>  Este bloque define las actualizaciones que Dependabot debe realizar.</p> 
+<strong> Actualización de Dependencias para npm:</strong> <strong>package-ecosystem: "npm": </strong> Especifica que Dependabot debe realizar actualizaciones de dependencias para el ecosistema de paquetes npm.</p>
+<strong> directory: "/": </strong>  Indica que los manifiestos de paquetes de npm se encuentran en la raíz del repositorio.</p>
+<strong> schedule: interval: "daily": </strong> Establece un cronograma para las actualizaciones diarias. 
+
+<pre>
+  <code>
+    - package-ecosystem: "github-actions"
+    # Workflow files stored in the default location of `.github/workflows`.
+    directory: "/"
+    schedule:
+      interval: "daily"
+  </code>
+</pre>
+
+<strong> Actualización de Dependencias para GitHub Actions:</strong></p>
+
+<strong> package-ecosystem: "github-actions": </strong> Especifica que Dependabot debe realizar actualizaciones relacionadas con el ecosistema de GitHub Actions.</p>
+<strong> directory: "/": </strong>  Indica que los archivos de flujo de trabajo (workflow) de GitHub Actions están en la ubicación predeterminada de <strong>.github/workflows </strong>.
+
+
 </body>
 </html>
