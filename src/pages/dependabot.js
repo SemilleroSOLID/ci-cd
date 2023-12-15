@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuración de Dependabot en tu Repositorio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
+// src/pages/dependabot.js
+import React from "react";
+import Layout from "../components/layout";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-    h1, p, ol, li {
-      color: #333;
-    }
 
-    h2, h3 {
-      color: #333;
-      margin-top: 20px;
-    }
-
-    code {
-      font-family: 'Courier New', Courier, monospace;
-      background-color: #f4f4f4;
-      padding: 4px 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Configuración de Dependabot en tu Repositorio</h1>
+const DependabotPage = () => (
+  <Layout>
+    <h1>Configuración de Dependabot</h1>
   
   <p>Para comenzar con las actualizaciones de Dependabot, necesitarás especificar qué ecosistemas de paquetes actualizar y dónde se encuentran los manifiestos de paquetes. Sigue estos pasos:</p>
 
@@ -67,10 +41,10 @@
 
   </code>
   </pre>
+
   <strong>Comentario de Inicio: </strong>
   <p>Este comentario proporciona información inicial sobre cómo comenzar con las actualizaciones de Dependabot. Destaca que necesitas especificar los ecosistemas de paquetes que deseas actualizar y dónde se encuentran los manifiestos de paquetes en tu repositorio. También incluye un enlace a la documentación oficial de GitHub, donde puedes encontrar todas las opciones de configuración disponibles.</p>
-
-
+  
   <pre>
   <code>
     version: 2
@@ -89,12 +63,13 @@
           interval: "daily"
   </code>
 </pre>
-
-<strong>Bloque de Configuración de Dependabot: </strong> version: 2: Indica que estás utilizando la versión 2 de la configuración de Dependabot. La versión 2 es la versión más reciente y proporciona más funcionalidades que la versión anterior.</p>
-<strong>updates:</strong>  Este bloque define las actualizaciones que Dependabot debe realizar.</p> 
-<strong> Actualización de Dependencias para npm:</strong> <strong>package-ecosystem: "npm": </strong> Especifica que Dependabot debe realizar actualizaciones de dependencias para el ecosistema de paquetes npm.</p>
-<strong> directory: "/": </strong>  Indica que los manifiestos de paquetes de npm se encuentran en la raíz del repositorio.</p>
-<strong> schedule: interval: "daily": </strong> Establece un cronograma para las actualizaciones diarias. 
+<ol>
+  <li><strong>Bloque de Configuración de Dependabot: </strong> version: 2: Indica que estás utilizando la versión 2 de la configuración de Dependabot. La versión 2 es la versión más reciente y proporciona más funcionalidades que la versión anterior.</li>
+  <li><strong>updates:</strong>  Este bloque define las actualizaciones que Dependabot debe realizar.</li> 
+  <li><strong> Actualización de Dependencias para npm:</strong> <strong>package-ecosystem: "npm": </strong> Especifica que Dependabot debe realizar actualizaciones de dependencias para el ecosistema de paquetes npm.</li>
+  <li><strong> directory: "/": </strong>  Indica que los manifiestos de paquetes de npm se encuentran en la raíz del repositorio.</li>
+  <li><strong> schedule: interval: "daily": </strong> Establece un cronograma para las actualizaciones diarias. </li>
+</ol>
 
 <pre>
   <code>
@@ -106,11 +81,14 @@
   </code>
 </pre>
 
-<strong> Actualización de Dependencias para GitHub Actions:</strong></p>
+<ol>
+<li><strong> Actualización de Dependencias para GitHub Actions:</strong></li>
 
-<strong> package-ecosystem: "github-actions": </strong> Especifica que Dependabot debe realizar actualizaciones relacionadas con el ecosistema de GitHub Actions.</p>
-<strong> directory: "/": </strong>  Indica que los archivos de flujo de trabajo (workflow) de GitHub Actions están en la ubicación predeterminada de <strong>.github/workflows </strong>.
+<li><strong> package-ecosystem: "github-actions": </strong> Especifica que Dependabot debe realizar actualizaciones relacionadas con el ecosistema de GitHub Actions.</li>
+<li><strong> directory: "/": </strong>  Indica que los archivos de flujo de trabajo (workflow) de GitHub Actions están en la ubicación predeterminada de <strong>.github/workflows </strong>.</li>
+</ol>
 
+  </Layout>
+);
 
-</body>
-</html>
+export default DependabotPage;
