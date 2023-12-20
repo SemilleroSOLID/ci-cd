@@ -9,6 +9,7 @@
     "gatsby": "^5.12.12",
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.12.3",
+    "gatsby-plugin-mdx": "^5.13.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-remark-highlight-code": "^3.3.0",
     "gatsby-remark-line-breaks": "^1.0.0",
@@ -20,6 +21,7 @@
     "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
+    "gatsby-remark-pre-content": "^0.1.0",
     "prettier": "^2.8.8"
   },
   "keywords": [

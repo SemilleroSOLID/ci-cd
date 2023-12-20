@@ -39,5 +39,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-pre-content' // añade esto antes que cualquier otro plugin que transforme bloques de código
+        ]
+      }
+    },
   ],
-}
+};

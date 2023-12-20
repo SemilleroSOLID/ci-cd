@@ -9,11 +9,11 @@ const Menu = () => (
     </div>
     <nav className="menu">
       <ul>
-        <li><Link to="/automerge">Automerge</Link></li>
+        <li><Link  to="/automerge">Automerge</Link></li>
         <li><Link to="/controlpr">Control PR</Link></li>
         <li><Link to="/crearaccion">Crear Acción</Link></li>
         <li><Link to="/dependabot">Dependabot</Link></li>
-        <li><Link to="/generadorDeAplicaciones">Generador de Aplicaciones</Link></li>
+        <li><Link to="/generadorDeAplicaciones">Gen. de Aplicaciones</Link></li>
         <li><Link to="/husky">Husky</Link></li>
         <li><Link to="/jasmine">Jasmine</Link></li>
         <li><Link to="/workflows">Workflow</Link></li>
